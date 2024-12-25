@@ -1,0 +1,55 @@
+<!-- Task 5:
+Write a program to print fibonacci series. Take the number of steps from input using HTML Input
+and when click on Print button, using JS print the entered number of steps in the fibonacci series on HTML
+page. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task5</title>
+</head>
+<body style=" background-color: #212121; color: #fff;">
+    <h1>Fibonacci Series Generator</h1>
+    <label for="noOfSteps">Enter number of Steps: </label>
+    <input type="number" name="noOfSteps" id="noOfSteps" placeholder="Enter steps" >
+    <button id="printBtn">Print</button>
+</body>
+
+<script>
+    document.getElementById("printBtn").addEventListener('click', printFiboSeries)
+
+    function printFiboSeries() {
+        const noOfSteps = Number(document.getElementById("noOfSteps").value)
+
+        if (noOfSteps <= 0) {
+            alert("Please enter a number")
+            return
+        }
+
+        const div = document.createElement('div.result')
+
+        const heading = document.createElement('h2')
+        heading.innerText = "Fibonacci Series:"
+        div.appendChild(heading)
+
+        const series = document.createElement('p')
+        let result = "0 1"
+        let first=0,second=1
+        for (let i = 0; i < noOfSteps-2; i++) {
+            let third = first + second
+            result += ` ${third}`
+            first = second
+            second = third
+        }
+        series.innerText = result
+        div.appendChild(series)
+
+        document.body.appendChild(div)
+    }
+
+
+</script>
+</html>
