@@ -25,7 +25,8 @@ function UserCard({ user }) {
       <div className="card flex flex-col border border-gray-200 ">
         <div className="avatar bg-[#F5F5F5] flex justify-center">
           <img
-            src=" https://avatars.dicebear.com/v2/avataaars/{{username}}.svg?options[mood][]=happy"
+            // src=" https://avatars.dicebear.com/v2/avataaars/{{username}}.svg?options[mood][]=happy"
+            src="https://api.dicebear.com/9.x/pixel-art/svg?seed=${user.name}"
             alt=""
             width={200}
             height={200}
